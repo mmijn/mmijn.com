@@ -1,0 +1,217 @@
+
+:root {
+    /* Here I'm setting the variables for the colors across the site - this way I just have to remember to refer to them as variables and when I change the vars they will change everywhere */
+    --bg: #F4F0EB; /* Background color */
+    --text: #141414; /* Text color */
+    --accnt1: #D03B00; /* Accent color 1*/
+    --accnt2: #ff5200; /* Accent color 2*/
+    --accnt3: #a6ff47; /* Accent color 3*/
+}
+
+body {
+    /* Set the background and text color using the above mentioned vars */
+    background: var(--bg);
+    color: var(--text);
+}
+
+body.dark-mode {
+    /* Override the background and text color vars for dark mode when my switch is toggled */
+    --bg: #141414;
+    --text: #F4F0EB;
+    --accnt1: var(--accnt2);
+}
+
+body.dark-mode .menu {
+    /* Set the background color and text color for the menu in dark mode */
+    background-color: #141414;
+    color: #F4F0EB;
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-style: normal;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100%;
+    overflow-y: auto; /* Allow vertical scrolling if necessary */
+    overflow-x: clip; /* Clip horizontal overflow */
+}
+
+a:link {
+    /* Style for unvisited links */
+    color: var(--accnt1); /* Use the accent color 1 variable */
+    text-decoration: none; /* Remove underline */
+}
+
+a:visited {
+    /* Style for visited links */
+    color: #ADBC9F; /* Specific color */
+    text-decoration: none; /* Remove underline */
+}
+
+a:hover {
+    /* Style for links on hover */
+    color: var(--text); /* Black color */
+    text-decoration: none; /* Remove underline */
+}
+
+a {
+    /* Style for all links */
+    font-style: normal; /* Set the font style to normal */
+}
+
+a:active {
+    /* Style for active links (when clicked) */
+    text-decoration: none; /* Remove underline */
+    color: #E83F6F; /* Specific color */
+}
+
+.container {
+    display: flex;
+    height: 100%;
+}
+
+.menu {
+    flex: 0 0 15vw; /* Fixed width for the menu */
+    background: var(--bg);
+    color: var(--text);
+    overflow: hidden;
+}
+
+.menu-content {
+    padding: 30px;
+}
+
+.menu h1 {
+    /* Style for h1 elements inside the menu */
+    padding-top: 0%; /* Remove top padding */
+}
+
+.menu ul {
+    /* Style for unordered lists inside the menu */
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+}
+
+.menu ul li {
+    /* Style for list items inside the menu */
+    margin-bottom: 10px; /* Add bottom margin for spacing */
+}
+
+.gallery {
+    flex: 1; /* Take up the remaining space */
+    max-width: 85vw; /* Ensure the gallery does not exceed the viewport width -- this is an odd number but it's assuming that most */
+    overflow-x: auto; /* Allow horizontal scrolling when content exceeds width */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+    box-sizing: border-box; /* Include padding and border in width calculation */
+}
+
+
+.scroll-container {
+    padding: 20px; /* Add padding to the scroll container */
+    white-space: nowrap; /* Prevent line breaks */
+    margin: 0 auto; /* Center the container horizontally */
+    max-width: 100%; /* Ensure the container does not exceed the gallery width */
+}
+
+
+.scroll-content {
+    /* Style for the content inside the scrollable container */
+    display: inline-block; /* Display the content as inline-block elements */
+    white-space: nowrap; /* Prevent line breaks */
+}
+
+.gallery-item {
+    /* Style for individual gallery items */
+    display: inline-block; /* Display the items as inline-block elements */
+    text-align: center; /* Center the text */
+    vertical-align: top; /* Align the text to the top of the image */
+    /* Align the text to the top of the image */
+}
+
+.gallery-item img {
+    /* Style for images inside gallery items */
+    height: auto; /* Maintain aspect ratio */
+    padding: 20px;
+    max-height: 80vh; /* Limit the maximum height to 80% of the viewport height */
+    max-width: 100%; /* Ensure the image doesn't exceed the container width */
+    /* Make sure the image scales down on small screens */
+}
+
+.gallery-item p {
+    /* Style for paragraphs inside gallery items */
+    margin-top: 10px; /* Add top margin for spacing */
+    text-align: center; /* Center the text */
+}
+
+/* Ensure the iframe takes the full height of the menu div */
+iframe {
+    width: 100%; /* Set the width to 100% */
+    height: 100%; /* Set the height to 100% */
+    border: none; /* Remove the default border */
+}
+
+.description {
+    /* Style for the description section */
+    width: 400px; /* Set a fixed width */
+    word-wrap: break-word; /* Break words if they are too long */
+    white-space: normal; /* Allow line breaks */
+    overflow-wrap: break-word; /* Break words if they are too long (for older browsers) */
+}
+
+/*animation section*/
+input {
+    /* Apply the wiggle animation to input elements */
+    animation: wiggle 2s linear infinite;
+}
+
+@keyframes wiggle {
+    /* Define the keyframes for the wiggle animation */
+    0%, 7% {
+        transform: rotateZ(0); /* No rotation */
+    }
+    15% {
+        transform: rotateZ(-15deg); /* Rotate -15 degrees */
+        scale: 120%; /* Increase the size by 20% */
+    }
+    20% {
+        transform: rotateZ(10deg); /* Rotate 10 degrees */
+    }
+    25% {
+        transform: rotateZ(-10deg); /* Rotate -10 degrees */
+    }
+    30% {
+        transform: rotateZ(6deg); /* Rotate 6 degrees */
+    }
+    35% {
+        transform: rotateZ(-4deg); /* Rotate -4 degrees */
+    }
+    40%, 100% {
+        transform: rotateZ(0); /* No rotation */
+    }
+}
+
+/* Responsive design: make the menu and gallery stack on small screens */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Stack the flex items vertically */
+    }
+
+    .menu {
+        width: 100%; /* Make the menu take up the full width */
+        overflow: scroll; /* Enable vertical scrolling if content overflows */
+    }
+
+    .gallery {
+        width: 100%; /* Make the gallery take up the full width */
+    }
+
+    .scroll-content {
+        white-space: normal; /* Allow line breaks */
+        /* Allow text to wrap on small screens */
+    }
+}
