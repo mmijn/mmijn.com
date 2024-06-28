@@ -48,7 +48,7 @@ a:link {
 
 a:visited {
     /* Style for visited links */
-    color: #ADBC9F; /* Specific color */
+    color: var(--accnt3); /* Specific color */
     text-decoration: none; /* Remove underline */
 }
 
