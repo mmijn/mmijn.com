@@ -3,9 +3,10 @@
     /* Here I'm setting the variables for the colors across the site - this way I just have to remember to refer to them as variables and when I change the vars they will change everywhere */
     --bg: #F4F0EB; /* Background color */
     --text: #141414; /* Text color */
-    --accnt1: #D03B00; /* Accent color 1*/
-    --accnt2: #ff5200; /* Accent color 2*/
-    --accnt3: #a6ff47; /* Accent color 3*/
+    --accnt1: #D03B00; /* Accent color 1 for links on light mode*/
+    --accnt2: #ff5200; /* Accent color 2 for links on dark mode*/
+    --accnt3: #a6ff47; /* Accent color 3 for fun*/
+    --accnt4: #718600; /* accent color 4 for fun*/
 }
 
 body {
