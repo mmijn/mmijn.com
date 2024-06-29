@@ -49,7 +49,7 @@ a:link {
 
 a:visited {
     /* Style for visited links */
-    color: var(--accnt4); /* Specific color */
+    color: var(--accnt2); /* Specific color */
     text-decoration: none; /* Remove underline */
 }
 
