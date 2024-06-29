@@ -177,7 +177,7 @@ input {
     }
     15% {
         transform: rotateZ(-15deg); /* Rotate -15 degrees */
-        scale: 120%; /* Increase the size by 20% */
+        scale: 130%; /* Increase the size by 20% */
     }
     20% {
         transform: rotateZ(10deg); /* Rotate 10 degrees */
@@ -204,13 +204,13 @@ input {
 
     .menu {
         flex-grow: 1; /* Take up available space */
-        flex-basis: 20vh; /* Set the minimum height to 20% of the viewport height */
+        flex-basis: 30vh; /* Set the minimum height to 20% of the viewport height */
         width: 100%; /* Make the menu take up the full width */
         overflow: auto; /* Enable vertical scrolling if content overflows */
     }
 
     .gallery {
-        flex-grow: 2; /* Take up twice as much available space as the menu */
+        flex-grow: 1; /* Take up twice as much available space as the menu */
         flex-basis: 60vh; /* Set the minimum height to 60% of the viewport height */
         width: 100%; /* Make the gallery take up the full width */
         overflow: auto; /* Enable vertical scrolling if content overflows */
