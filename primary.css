@@ -67,7 +67,7 @@ a {
 a:active {
     /* Style for active links (when clicked) */
     text-decoration: none; /* Remove underline */
-    color: #E83F6F; /* Specific color */
+    color: var(--accnt3); /* Specific color */
 }
 
 .container {
@@ -147,6 +147,9 @@ a:active {
     /* Style for paragraphs inside gallery items */
     margin-top: 10px; /* Add top margin for spacing */
     text-align: center; /* Center the text */
+    max-width: 500px;
+    white-space: normal;
+    margin: auto;
 }
 
 /* Ensure the iframe takes the full height of the menu div */
