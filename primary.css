@@ -147,7 +147,7 @@ a:active {
     /* Style for paragraphs inside gallery items */
     margin-top: 10px; /* Add top margin for spacing */
     text-align: center; /* Center the text */
-    max-width: 350px;
+    max-width: 500px;
     white-space: normal;
     margin: auto;
 }
